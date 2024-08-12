@@ -266,7 +266,7 @@ return groupByFirstLetter(sortedData);
 }
 
 function CitiesApp() {
-const [citiesValue, setCitiesValue] = useState(sortAndFilterData(cities));
+const [citiesValue, setCitiesValue] = useState(cities);
 
 useEffect(() => {
     // Получаем список городов из Local Storage
