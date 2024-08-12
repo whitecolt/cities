@@ -1,4 +1,4 @@
-import CitiesApp from "./components/CItiesApp";
+import CitiesApp from "./components/CitiesApp";
 
 function App() {
   return (

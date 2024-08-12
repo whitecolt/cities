@@ -1,6 +1,6 @@
 import React from "react";
 
-function Cities({data}) {
+function CitiesList({data}) {
     const citiesList = data.map((item, index) => {
         const letter = item[0]?.name.charAt(0);
         const cities = item.map((city) => (<li key={city.id}>{city.name}</li>))
@@ -18,4 +18,4 @@ function Cities({data}) {
     );
 }
 
-export default Cities;
+export default CitiesList;
