@@ -6,7 +6,7 @@ import ErrorMessage from "./ErrorMessage";
 import {
     NAME_IS_EMPTY,
     NAME_IS_TOO_SHORT,
-    INCORRECT_LANGUAGE,
+    INCORRECT_SYMBOLS,
     ALREADY_EXISTS,
 } from "../constants/errorKeys";
 
@@ -57,9 +57,9 @@ function AddingCitiesForm({
             setErrorKey(NAME_IS_TOO_SHORT);
         }
         // Проверка на использование только кириллицы
-        else if (!/^[а-я\s]+$/i.test(inputValue)) {
+        else if (!/^[а-я-\s]+$/i.test(inputValue)) {
             setShowError(true);
-            setErrorKey(INCORRECT_LANGUAGE);
+            setErrorKey(INCORRECT_SYMBOLS);
         }
         else if (isItemAlreadyExist(cityName)) {
             setShowError(true);

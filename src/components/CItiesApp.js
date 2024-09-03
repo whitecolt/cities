@@ -235,9 +235,7 @@ const cities = [
 
 function sortAndFilterData(array) {
     return [...array]
-        // Сортируем массив в алфавитном порядке
         .sort((a, b) => a.name > b.name ? 1 : -1)
-        // Удаляем дубликаты, оставляем только уникальные названия городов
         .filter((item, index, array) => (
             index === array.findIndex(({ name }) => name.toLowerCase() === item.name.toLowerCase())));
 }
@@ -266,15 +264,13 @@ return groupByFirstLetter(sortedData);
 }
 
 function CitiesApp() {
-const [citiesValue, setCitiesValue] = useState(sortAndFilterData(cities));
-
-useEffect(() => {
-    const citiesJSON = getItem('cities')
+const [citiesValue, setCitiesValue] = useState(() => {
+    const citiesJSON = getItem('cities');
     if (citiesJSON) {
-        setCitiesValue(JSON.parse(citiesJSON));
+        return (JSON.parse(citiesJSON));
     }
-}, [])
-
+    return cities;
+});
 
 useEffect(() => {
     setItem('cities', JSON.stringify(citiesValue))
