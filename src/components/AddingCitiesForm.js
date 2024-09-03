@@ -61,11 +61,12 @@ function AddingCitiesForm({
             setShowError(true);
             setErrorKey(INCORRECT_SYMBOLS);
         }
+        // Проверка на то, есть ли город уже в списке
         else if (isItemAlreadyExist(cityName)) {
             setShowError(true);
             setErrorKey(ALREADY_EXISTS);
         } else {
-            setCitiesValue((prev) => ([...prev, {id: nanoid(5), name: cityName } ]));
+            setCitiesValue((prev) => ([...prev, {id: nanoid(2), name: cityName } ]));
             setInputValue('')
             if (isShowError) {
                 setShowError(false);

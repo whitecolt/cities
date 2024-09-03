@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Cities from "./Cities";
+import CitiesList from "./CitiesList";
 import AddingCitiesForm from "./AddingCitiesForm";
 import {
     getItem,
@@ -253,7 +253,7 @@ function groupByFirstLetter(array) {
         return accumulator;
     }, {})
 /*  Затем превращаем объект в массив, в итоге получаем массив с подмассивами,
-    которые содержат все города на одну букву
+    которые содержат все города, начинающиеся на одну букву
  */
 return Object.values(result);
 }
@@ -287,7 +287,7 @@ return (
             initialData={cities}
             isItemAlreadyExist={isItemAlreadyExist}
         />
-        <Cities data={setDataInAlphabeticalOrder(citiesValue)} />
+        <CitiesList data={setDataInAlphabeticalOrder(citiesValue)} />
     </>
 )
 }
